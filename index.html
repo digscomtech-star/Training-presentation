@@ -9,6 +9,7 @@
   .slideshow-container { position: relative; max-width: 100%; margin: auto; overflow: hidden; min-height: 100vh; display:flex; flex-direction:column; justify-content:center; align-items:center;}
   .slide { display: none; text-align: center; padding: 40px 20px; width: 100%; }
   .slide img { max-width: 60%; margin-bottom: 30px; border-radius:8px; }
+  .slide img.error { border: 2px solid red; }
   .slide-text { font-weight: bold; font-size: 1.8rem; color: #1f2937; margin-bottom: 20px; }
   .nav { position: relative; width: 100%; text-align: center; margin-top: 30px; }
   .nav button { cursor: pointer; padding: 12px 25px; font-size: 1rem; margin: 0 10px; border:none; border-radius:5px; background:#3b82f6; color:white; font-weight:bold;}
@@ -20,58 +21,58 @@
 <div class="slideshow-container">
 
   <!-- Slide 1 -->
-  <div class="slide" id="slide1">
-    <img src="slide1_welcome.png" alt="Welcome Graphic">
+  <div class="slide">
+    <img src="slide1_welcome.png" alt="Welcome Graphic" onerror="this.classList.add('error')">
     <div class="slide-text">Welcome to this exciting journey!</div>
   </div>
 
   <!-- Slide 2 -->
-  <div class="slide" id="slide2">
+  <div class="slide">
     <div class="slide-text">Explore powerful <b>tools</b> that simplify work</div>
   </div>
 
   <!-- Slide 3 -->
-  <div class="slide" id="slide3">
-    <img src="slide3_tools.png" alt="Tools Graphic">
+  <div class="slide">
+    <img src="slide3_tools.png" alt="Tools Graphic" onerror="this.classList.add('error')">
     <div class="slide-text">Discover clever <b>techniques</b> for efficiency</div>
   </div>
 
   <!-- Slide 4 -->
-  <div class="slide" id="slide4">
+  <div class="slide">
     <div class="slide-text">Master your workflow step by step</div>
   </div>
 
   <!-- Slide 5 -->
-  <div class="slide" id="slide5">
-    <img src="slide5_actions.png" alt="Actions Graphic">
+  <div class="slide">
+    <img src="slide5_actions.png" alt="Actions Graphic" onerror="this.classList.add('error')">
     <div class="slide-text">See <b>actions</b> turn into results</div>
   </div>
 
   <!-- Slide 6 -->
-  <div class="slide" id="slide6">
-    <img src="slide6_collaboration.png" alt="Collaboration Graphic">
+  <div class="slide">
+    <img src="slide6_collaboration.png" alt="Collaboration Graphic" onerror="this.classList.add('error')">
     <div class="slide-text">Collaborate and communicate effectively</div>
   </div>
 
   <!-- Slide 7 -->
-  <div class="slide" id="slide7">
+  <div class="slide">
     <div class="slide-text">Track progress and grow confidently</div>
   </div>
 
   <!-- Slide 8 -->
-  <div class="slide" id="slide8">
-    <img src="slide8_challenges.png" alt="Challenges Graphic">
+  <div class="slide">
+    <img src="slide8_challenges.png" alt="Challenges Graphic" onerror="this.classList.add('error')">
     <div class="slide-text">Solve challenges like a pro</div>
   </div>
 
   <!-- Slide 9 -->
-  <div class="slide" id="slide9">
+  <div class="slide">
     <div class="slide-text">Apply your knowledge creatively</div>
   </div>
 
   <!-- Slide 10 -->
-  <div class="slide" id="slide10">
-    <img src="slide10_ready.png" alt="Ready Graphic">
+  <div class="slide">
+    <img src="slide10_ready.png" alt="Ready Graphic" onerror="this.classList.add('error')">
     <div class="slide-text">Ready to level up? Join us now!</div>
   </div>
 
