@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Training Slideshow</title>
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+  }
+  body, html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: #1e1e1e;
+    color: #fff;
+  }
+  .slideshow-container {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  .slide {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #4e54c8, #8f94fb);
+    transition: all 0.5s ease;
+  }
+  .slide.active {
+    display: flex;
+  }
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    line-height: 1.5;
+  }
+  .tool {
+    font-weight: bold;
+    color: #ffd700;
+  }
+  .nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    user-select: none;
+  }
+  .nav-button:hover {
+    background: rgba(0,0,0,0.8);
+  }
+  #prev {
+    left: 10px;
+  }
+  #next {
+    right: 10px;
+  }
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+    .nav-button {
+      font-size: 1.5rem;
+      padding: 8px 12px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="slideshow-container">
+  <!-- Slide 1 -->
+  <div class="slide active">
+    <h1>Welcome to the Training!</h1>
+    <p>Get ready to explore <span class="tool">tools</span> and <span class="tool">commands</span> that will transform your workflow.</p>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="slide">
+    <h1>Discover Powerful Tools</h1>
+    <p>You'll be using <span class="tool">tools</span> to simplify tasks efficiently and with precision.</p>
+  </div>
+
+  <!-- Slide 3 -->
+  <div class="slide">
+    <h1>Hands-On Commands</h1>
+    <p>Master essential <span class="tool">commands</span> to get things done quickly and correctly.</p>
+  </div>
+
+  <!-- Slide 4 -->
+  <div class="slide">
+    <h1>Collaboration Made Simple</h1>
+    <p>Learn how to communicate using <span class="tool">tools</span> that enhance teamwork.</p>
+  </div>
+
+  <!-- Slide 5 -->
+  <div class="slide">
+    <h1>Organize Like a Pro</h1>
+    <p>Use <span class="tool">commands</span> to structure projects efficiently.</p>
+  </div>
+
+  <!-- Slide 6 -->
+  <div class="slide">
+    <h1>Speed & Efficiency</h1>
+    <p>Discover <span class="tool">tools</span> that save you time and effort every day.</p>
+  </div>
+
+  <!-- Slide 7 -->
+  <div class="slide">
+    <h1>Automation Ready</h1>
+    <p>Combine <span class="tool">tools</span> and <span class="tool">commands</span> to automate tasks smoothly.</p>
+  </div>
+
+  <!-- Slide 8 -->
+  <div class="slide">
+    <h1>Visualize Results</h1>
+    <p>Leverage <span class="tool">tools</span> to see your work come to life clearly.</p>
+  </div>
+
+  <!-- Slide 9 -->
+  <div class="slide">
+    <h1>Stay in Control</h1>
+    <p>Use <span class="tool">commands</span> wisely to manage projects efficiently.</p>
+  </div>
+
+  <!-- Slide 10 -->
+  <div class="slide">
+    <h1>Ready to Begin?</h1>
+    <p>Start your journey and explore the <span class="tool">tools</span> that will make you excel.</p>
+  </div>
+
+  <!-- Navigation -->
+  <button class="nav-button" id="prev">&#10094;</button>
+  <button class="nav-button" id="next">&#10095;</button>
+</div>
+
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === index);
+  });
+}
+
+document.getElementById('prev').addEventListener('click', () => {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  showSlide(currentSlide);
+});
+
+document.getElementById('next').addEventListener('click', () => {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+});
+</script>
+
+</body>
+</html>
