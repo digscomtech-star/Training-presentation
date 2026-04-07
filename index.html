@@ -3,181 +3,100 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Training Slideshow</title>
+<title>Course Slideshow</title>
 <style>
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-  }
-  body, html {
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    background: #1e1e1e;
-    color: #fff;
-  }
-  .slideshow-container {
-    position: relative;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-  }
-  .slide {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    padding: 20px;
-    text-align: center;
-    background: linear-gradient(135deg, #4e54c8, #8f94fb);
-    transition: all 0.5s ease;
-  }
-  .slide.active {
-    display: flex;
-  }
-  h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
-  p {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    line-height: 1.5;
-  }
-  .tool {
-    font-weight: bold;
-    color: #ffd700;
-  }
-  .nav-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0,0,0,0.5);
-    border: none;
-    color: #fff;
-    font-size: 2rem;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 5px;
-    user-select: none;
-  }
-  .nav-button:hover {
-    background: rgba(0,0,0,0.8);
-  }
-  #prev {
-    left: 10px;
-  }
-  #next {
-    right: 10px;
-  }
-  @media (max-width: 600px) {
-    h1 {
-      font-size: 1.5rem;
-    }
-    p {
-      font-size: 1rem;
-    }
-    .nav-button {
-      font-size: 1.5rem;
-      padding: 8px 12px;
-    }
-  }
+  body { margin:0; font-family:'Arial',sans-serif; background: linear-gradient(to right, #f0f4f8, #d9e2ec);}
+  .slideshow-container { position: relative; max-width: 100%; margin: auto; overflow: hidden; min-height: 100vh; display:flex; flex-direction:column; justify-content:center; align-items:center;}
+  .slide { display: none; text-align: center; padding: 40px 20px; width: 100%; }
+  .slide img { max-width: 60%; margin-bottom: 30px; border-radius:8px; }
+  .slide-text { font-weight: bold; font-size: 1.8rem; color: #1f2937; margin-bottom: 20px; }
+  .nav { position: relative; width: 100%; text-align: center; margin-top: 30px; }
+  .nav button { cursor: pointer; padding: 12px 25px; font-size: 1rem; margin: 0 10px; border:none; border-radius:5px; background:#3b82f6; color:white; font-weight:bold;}
+  .nav button:hover { background:#2563eb; }
 </style>
 </head>
 <body>
 
 <div class="slideshow-container">
+
   <!-- Slide 1 -->
-  <div class="slide active">
-    <h1>Welcome to the Training!</h1>
-    <p>Get ready to explore <span class="tool">tools</span> and <span class="tool">commands</span> that will transform your workflow.</p>
+  <div class="slide" id="slide1">
+    <img src="slide1_welcome.png" alt="Welcome Graphic">
+    <div class="slide-text">Welcome to this exciting journey!</div>
   </div>
 
   <!-- Slide 2 -->
-  <div class="slide">
-    <h1>Discover Powerful Tools</h1>
-    <p>You'll be using <span class="tool">tools</span> to simplify tasks efficiently and with precision.</p>
+  <div class="slide" id="slide2">
+    <div class="slide-text">Explore powerful <b>tools</b> that simplify work</div>
   </div>
 
   <!-- Slide 3 -->
-  <div class="slide">
-    <h1>Hands-On Commands</h1>
-    <p>Master essential <span class="tool">commands</span> to get things done quickly and correctly.</p>
+  <div class="slide" id="slide3">
+    <img src="slide3_tools.png" alt="Tools Graphic">
+    <div class="slide-text">Discover clever <b>techniques</b> for efficiency</div>
   </div>
 
   <!-- Slide 4 -->
-  <div class="slide">
-    <h1>Collaboration Made Simple</h1>
-    <p>Learn how to communicate using <span class="tool">tools</span> that enhance teamwork.</p>
+  <div class="slide" id="slide4">
+    <div class="slide-text">Master your workflow step by step</div>
   </div>
 
   <!-- Slide 5 -->
-  <div class="slide">
-    <h1>Organize Like a Pro</h1>
-    <p>Use <span class="tool">commands</span> to structure projects efficiently.</p>
+  <div class="slide" id="slide5">
+    <img src="slide5_actions.png" alt="Actions Graphic">
+    <div class="slide-text">See <b>actions</b> turn into results</div>
   </div>
 
   <!-- Slide 6 -->
-  <div class="slide">
-    <h1>Speed & Efficiency</h1>
-    <p>Discover <span class="tool">tools</span> that save you time and effort every day.</p>
+  <div class="slide" id="slide6">
+    <img src="slide6_collaboration.png" alt="Collaboration Graphic">
+    <div class="slide-text">Collaborate and communicate effectively</div>
   </div>
 
   <!-- Slide 7 -->
-  <div class="slide">
-    <h1>Automation Ready</h1>
-    <p>Combine <span class="tool">tools</span> and <span class="tool">commands</span> to automate tasks smoothly.</p>
+  <div class="slide" id="slide7">
+    <div class="slide-text">Track progress and grow confidently</div>
   </div>
 
   <!-- Slide 8 -->
-  <div class="slide">
-    <h1>Visualize Results</h1>
-    <p>Leverage <span class="tool">tools</span> to see your work come to life clearly.</p>
+  <div class="slide" id="slide8">
+    <img src="slide8_challenges.png" alt="Challenges Graphic">
+    <div class="slide-text">Solve challenges like a pro</div>
   </div>
 
   <!-- Slide 9 -->
-  <div class="slide">
-    <h1>Stay in Control</h1>
-    <p>Use <span class="tool">commands</span> wisely to manage projects efficiently.</p>
+  <div class="slide" id="slide9">
+    <div class="slide-text">Apply your knowledge creatively</div>
   </div>
 
   <!-- Slide 10 -->
-  <div class="slide">
-    <h1>Ready to Begin?</h1>
-    <p>Start your journey and explore the <span class="tool">tools</span> that will make you excel.</p>
+  <div class="slide" id="slide10">
+    <img src="slide10_ready.png" alt="Ready Graphic">
+    <div class="slide-text">Ready to level up? Join us now!</div>
   </div>
 
-  <!-- Navigation -->
-  <button class="nav-button" id="prev">&#10094;</button>
-  <button class="nav-button" id="next">&#10095;</button>
+  <!-- Navigation Arrows -->
+  <div class="nav">
+    <button onclick="prevSlide()">&#10094; Previous</button>
+    <button onclick="nextSlide()">Next &#10095;</button>
+  </div>
+
 </div>
 
 <script>
 let currentSlide = 0;
-const slides = document.querySelectorAll('.slide');
-
-function showSlide(index) {
-  slides.forEach((slide, i) => {
-    slide.classList.toggle('active', i === index);
-  });
+const slides = document.getElementsByClassName('slide');
+function showSlide(index){
+  if(index >= slides.length) currentSlide = 0;
+  else if(index < 0) currentSlide = slides.length - 1;
+  else currentSlide = index;
+  for(let s of slides) s.style.display = 'none';
+  slides[currentSlide].style.display = 'block';
 }
-
-document.getElementById('prev').addEventListener('click', () => {
-  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-  showSlide(currentSlide);
-});
-
-document.getElementById('next').addEventListener('click', () => {
-  currentSlide = (currentSlide + 1) % slides.length;
-  showSlide(currentSlide);
-});
+function nextSlide(){ showSlide(currentSlide + 1); }
+function prevSlide(){ showSlide(currentSlide - 1); }
+// Show first slide initially
+showSlide(0);
 </script>
 
 </body>
